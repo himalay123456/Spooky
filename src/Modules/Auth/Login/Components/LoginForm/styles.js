@@ -1,0 +1,221 @@
+/* eslint-disable import/prefer-default-export */
+
+import { makeStyles } from '@material-ui/core/styles';
+
+export const useStyles = makeStyles({
+  app: {
+    background: '#fff',
+    marginBottom: '50px',
+    marginTop: '150px',
+  },
+  input: {
+    // background: '#E5E5E5',
+    // borderRadius: '30px',
+    paddingLeft: '30px',
+    fontFamily: 'Tomica',
+    fontSize: '17px',
+    '&::placeholder': {
+      color: '#000000;',
+      opacity: '0.4',
+      marginLeft: '5px',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: 'green !important',
+    },
+  },
+  input2: {
+    // background: '#E5E5E5',
+    // borderRadius: '30px',
+    paddingLeft: '17px',
+    fontFamily: 'Tomica',
+    fontSize: '17px',
+    '&::placeholder': {
+      color: '#000000;',
+      opacity: '0.4',
+      marginLeft: '5px',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: 'green !important',
+    },
+  },
+  icon1: {
+    marginRight: '10px',
+    marginTop: '6px',
+  },
+  input1: {
+    background: '#F8F8F8',
+    width: '100%',
+    fontFamily: 'Tomica',
+    borderRadius: '30px',
+    borderColor: 'black !important',
+    fontSize: '17px',
+    marginBottom: '20px',
+    '&:focus': {
+      backgroundColor: '#ffddec',
+      borderColor: 'brown',
+    },
+  },
+  input3: {
+    background: '#F8F8F8',
+    width: '67% !important',
+    fontFamily: 'Tomica',
+    borderRadius: '30px',
+    paddingLeft: '30px',
+    borderColor: 'black !important',
+    fontSize: '17px',
+  },
+  boxGrid: {
+    // display: 'flex',
+    justifyContent: 'center',
+    marginTop: '3vh',
+    border: '0.5px solid #FFFFFF',
+    boxSizing: 'border-box',
+    boxShadow: '10px 10px 21px 2px rgba(0 0 0 / 8%)',
+    borderRadius: '73px',
+    marginBottom: '70px',
+  },
+  boxContent: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  topSpace: {
+    marginTop: '10vh',
+  },
+  subTitle: {
+    fontSize: '12px',
+    fontFamily: 'Tomica',
+    fontWeight: '600',
+  },
+  title: {
+    fontWeight: 900,
+    fontFamily: 'TomicaBlack',
+    fontSize: '28px',
+    lineHeight: '60px',
+    textAlign: 'center',
+    textTransform: 'uppercase',
+    color: 'black',
+  },
+  title1: {
+    fontWeight: 400,
+    fontFamily: 'Tomica',
+    fontSize: '22px',
+    lineHeight: '40px',
+    textAlign: 'center',
+    // marginTop: '70px',
+    color: 'black',
+    opacity: 0.4,
+    marginBottom: '0px',
+  },
+  title2: {
+    fontWeight: 400,
+    fontFamily: 'Tomica',
+    fontSize: '15px',
+    lineHeight: '30px',
+    marginRight: '5px',
+    textAlign: 'right',
+    // marginTop: '70px',
+    color: 'black',
+    textDecorationLine: 'underline',
+    marginBottom: '0px',
+  },
+  dropdownStyle: {
+    marginLeft: '0px',
+    marginTop: '55px',
+  },
+  sendButton: {
+    textAlignLast: 'end',
+    textAlign: 'end',
+    fontWeight: 'bold',
+    height: '60px',
+    fontFamily: 'Tomica',
+    fontSize: '18px',
+    color: 'Black',
+    background: '#00FF47',
+    borderRadius: '100px',
+    boxShadow: 'none',
+    width: '100%',
+    '&:hover': {
+      backgroundColor: '#00FF47',
+      color: '#000000',
+    },
+  },
+  iconBox: {
+    position: 'relative',
+  },
+  logoImage: {
+    position: 'absolute',
+    top: '20px',
+    right: '35px',
+    cursor: 'pointer',
+    zIndex: 500,
+  },
+  createBtn: {
+    textAlignLast: 'end',
+    textAlign: 'end',
+    fontWeight: 'normal',
+    height: '60px',
+    fontFamily: 'Tomica',
+    fontSize: '18px',
+    color: 'Black',
+    marginTop: '20px',
+    background: '#F3F2EC',
+    boxShadow: 'none',
+    borderRadius: '100px',
+    width: '100%',
+    '&:hover': {
+      backgroundColor: '#00FF47',
+      color: '#000000',
+    },
+  },
+  width100: {
+    width: '100%',
+    backgroundColor: '#E5E5E5',
+    marginTop: '25px !important',
+    height: '40px',
+    padding: '0px !important',
+  },
+  colorWhite: {
+    color: 'white !important',
+  },
+  successMessage: {
+    color: '#00FF47',
+    fontSize: '1rem',
+    fontFamily: 'Tomica',
+    textAlign: 'center',
+    marginLeft: '2px',
+    fontWeight: 'bold',
+  },
+  '@media screen and (min-width: 600px)': {
+  },
+
+  '@media screen and (max-width: 768px)': {
+    boxGrid: {
+      justifyContent: 'center',
+      marginTop: '6vh',
+      border: '0.5px solid #FFFFFF',
+      boxSizing: 'border-box',
+      boxShadow: '10px 10px 21px 2px rgba(0, 0, 0, 0.22)',
+      borderRadius: '73px',
+    },
+    // title: {
+    //   fontSize: '24px',
+    //   lineHeight: '20px',
+    // },
+    // title1: {
+    //   fontSize: '18px',
+    // },
+    // sendButton: {
+    //   fontSize: '16px',
+    // },
+    // createBtn: {
+    //   fontSize: '15px',
+    // },
+    subTitle: {
+      fontSize: '12px',
+      width: '80%',
+      marginBottom: '5px',
+    },
+  },
+});

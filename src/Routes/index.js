@@ -1,47 +1,40 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/jsx-filename-extension */
-import { Navigate, useRoutes } from 'react-router-dom';
-// layouts
-import DashboardLayout from '../Layouts/Admin/DashboardLayout';
-import Dashboard from '../Modules/Admin/Dashboard';
-import LandingPage from '../Modules/Landing';
-// import LogoOnlyLayout from './layouts/LogoOnlyLayout';
-// //
-// import Login from './pages/Login';
-// import Register from './pages/Register';
-// import DashboardApp from './pages/DashboardApp';
-// import Products from './pages/Products';
-// import Blog from './pages/Blog';
-// import User from './pages/User';
-// import NotFound from './pages/Page404';
-
+import { useRoutes } from 'react-router-dom';
+import Home from '../Modules/Home';
+import Trendland from '../Modules/TrendLand';
+import BuyNft from '../Modules/BuyNft';
+import ViewNft from '../Modules/ViewNft';
+import PageNotFound from '../Modules/PageNotFound';
+import Brawhaus from '../Modules/Brawhaus';
 // ----------------------------------------------------------------------
 
 export default function Router() {
   return useRoutes([
     {
-      path: '/dashboard',
-      element: <DashboardLayout />,
-      children: [
-        { path: '/', element: <Navigate to="/dashboard/app" replace /> },
-        { path: 'app', element: <Dashboard /> },
-        //     { path: 'user', element: <User /> },
-        //     { path: 'products', element: <Products /> },
-        //     { path: 'blog', element: <Blog /> }
-      ],
+      path: '/marketplace',
+      element: <Home />,
+    },
+    {
+      path: '/curator',
+      element: <Trendland />,
+    },
+    {
+      path: '/brawhaus',
+      element: <Brawhaus />,
+    },
+    {
+      path: '/wallet',
+      element: <BuyNft />,
+    },
+    {
+      path: '/view-nft/:id',
+      element: <ViewNft />,
     },
     {
       path: '/',
-      element: <LandingPage />,
-      children: [
-        // { path: 'login', element: <Login /> },
-        // { path: 'register', element: <Register /> },
-        // { path: '404', element: <NotFound /> },
-        { path: '/', element: <Navigate to="/dashboard" /> },
-        // { path: '*', element: <Navigate to="/404" /> }
-      ],
+      element: <Home />,
     },
-
-    { path: '*', element: <Navigate to="/404" replace /> },
+    { path: '*', element: <PageNotFound /> },
   ]);
 }

@@ -1,0 +1,87 @@
+.SubscribeContainer{
+	a:hover{
+		text-decoration: none;
+	}
+	.form-control:focus,.btn:focus{
+		border:none;
+		box-shadow: none;
+	}
+	.m-show{
+		display: none !important;
+	}
+	.subscribe_section{
+		margin:35px;
+		display: flex;
+		justify-content: center;
+		position: relative;
+	}
+	.subscribe_section img{
+		
+		object-fit: cover;
+		object-position: bottom;
+		max-width:1000px;
+		width: 100%;
+	}
+	.subscribe_section_content{
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		padding: 0px 100px;
+		top:50%;
+	}
+	.subscribe_section_content h2{
+		font-weight: 900;
+		font-family: Tomica;
+		font-size: 23px;
+		line-height: 40px;
+		text-align: center;
+		color: #5E6282;
+		margin-bottom: 25px;
+	}
+	.subscribe_section_content .input_group{
+		display: flex;
+		align-items: center;
+		position: relative;
+	}
+	.subscribe_section_content input{
+		padding: 17px;
+		min-width: 353px;
+		width: 100%;
+		background: #FFFFFF;
+		border-radius: 10px;
+		border:none;
+		padding-left: 56px;
+		font-size: 16px;
+		line-height: 16px;
+		color: #39425D;
+	}
+	.subscribe_section_content input::placeholder{
+		font-size: 16px;
+		font-family: Tomica;
+		line-height: 16px;
+		color: #39425D;
+	}
+	.subscribe_section_content .email-icon{
+		position: absolute;
+		left:25px;
+		bottom: 19px;
+	}
+	.subscribe_btn{
+		margin-left: 20px;
+		background: linear-gradient(
+	180deg, #FF946D 0%, #FF7D68 100%);
+		border-radius: 10px;
+		border: none;
+		font-weight: bold;
+		font-size: 15px;
+		line-height: 15px;
+		color: #fff;
+		min-width: 150px;
+		width: 100%;
+		text-align: center;
+		padding: 20px 0px;
+	}
+	.subscribe_btn:hover{
+		cursor: pointer;
+	}
+}

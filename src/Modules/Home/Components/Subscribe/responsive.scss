@@ -1,0 +1,80 @@
+.SubscribeContainer{
+	@media (max-width: 768px){
+		.m-hide{
+			display: none !important;
+		}
+		.m-show{
+			display: block !important;
+		}
+		.subscribe_section_content h2{
+			font-size: 20px;
+			padding: 0px 50px;
+		}
+		.subscribe_section_content input{
+			padding-top: 15px;
+			padding-bottom:15px; 
+			min-width: 310px;
+		}
+		.subscribe_btn{
+			padding: 18px 0px;
+			min-width: 120px;
+		}
+		.subscribe_section_content{
+			
+			padding: unset;
+		}
+	}
+	@media (max-width: 576px){
+		.subscribe_section_content h2{
+			font-weight: bold;
+			font-size: 16px;
+			line-height: 20px;
+			padding: 0px 20px;
+		}
+		.subscribe_section_content input{
+			min-width: 209px;
+			padding-top: 9px;
+			padding-bottom: 9px;
+		}
+		.subscribe_btn{
+			margin-left: 5px;
+			font-size: 12px;
+			line-height: 12px;
+			min-width: 98px;
+			padding: 12px 0px;
+		}
+		.subscribe_section_content .email-icon{
+			bottom: 9px;
+		}
+	}
+	@media (max-width: 475px){
+			.subscribe_section_content input::placeholder,.subscribe_section_content input{
+			font-size: 12px;
+			line-height: 12px;
+		}
+		.subscribe_section_content h2{
+			font-size: 13px;
+			line-height: 18px;
+		}
+		
+	}
+	@media (max-width: 375px){
+		.subscribe_section{
+			margin: 20px;
+		}
+	
+		.subscribe_section_content input {
+			min-width: 150px;
+		}
+		.subscribe_btn{
+			min-width: 90px;
+		}
+	}
+	@media (max-width: 320px){
+		.subscribe_section{
+			margin: 10px;
+		}
+	}
+	
+	
+}
