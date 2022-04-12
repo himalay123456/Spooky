@@ -1,0 +1,51 @@
+.StepsContainer{
+    .inputRounded .MuiOutlinedInput-root {
+        border-radius: 30px;
+    }
+    
+    .inputRounded {
+        margin-bottom: 2vh !important;
+        width: 100%;
+    } 
+    .inputRounded .MuiOutlinedInput-root {
+        background: #F8F8F8 !important;
+    }
+    .MuiSelect-outlined.MuiSelect-outlined{
+        color: #000000 !important;
+          opacity: 1;
+          margin-left: -10px;
+    }
+    
+    .MuiSelect-outlined.MuiSelect-outlined {
+        margin-left: 2px !important;
+        padding-left: 26px;
+        border-radius: 30px !important;
+    }
+    
+    .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+        border-color: black !important;
+    }
+    
+    .MuiOutlinedInput-notchedOutline
+    {
+         border-color: white !important;
+    }
+    .inputRounded1 {
+        margin-bottom: 2vh !important;
+        width: 100%;
+        border: 1px solid black !important;
+        border-radius: 30px !important;
+    }
+    
+    .inputRounded ::placeholder {
+        font-size: '1px';
+    }
+    
+    ::-webkit-input-placeholder:after {
+        content: '*';
+     }
+    
+    .Mui-focused fieldset{
+        border-color: 'green'
+      }
+}

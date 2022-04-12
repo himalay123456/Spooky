@@ -2,6 +2,7 @@
 /* eslint-disable max-len */
 import React, { useEffect, useState } from 'react';
 import { useWeb3React } from '@web3-react/core';
+import { useSelector } from 'react-redux';
 import Router from './Routes';
 import { useEagerConnect, useInactiveListener } from './hooks';
 
@@ -12,6 +13,7 @@ import { useEagerConnect, useInactiveListener } from './hooks';
 function App() {
   const [activatingConnector, setActivatingConnector] = useState();
   const { connector, active } = useWeb3React();
+  const { isAdmin, isSuperAdmin } = useSelector((reducerState) => reducerState.Auth);
 
   // handle logic to eagerly connect to the injected ethereum provider, if it exists and has granted access already
   const triedEager = useEagerConnect();
@@ -29,7 +31,7 @@ function App() {
   }
   return (
     <>
-      <Router />
+      <Router isAdmin={isAdmin} isSuperAdmin={isSuperAdmin} />
     </>
   );
 }

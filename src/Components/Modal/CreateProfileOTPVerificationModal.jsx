@@ -75,33 +75,27 @@ const CreateProfileOTPVerificationModal = ({
           <span className={`${classes.onHover} ${classes.closeBtn}`}><CloseIcon /></span>
         </div>
         <DialogContentText id="alert-dialog-description">
-          <form onSubmit={(e) => {
-            e.preventDefault();
-            handleSubmit();
-          }}
-          >
-            <Grid container style={{ marginTop: '5vh' }}>
-              <Grid item xs={1} sm={2} md={2} xl={2} />
-              <Grid item xs={10} sm={8} md={8} xl={8}>
-                <OtpInput
-                  value={otp}
-                  onChange={handleChange}
-                  numInputs={6}
-                  separator={false}
-                  inputStyle={classes.otpInput}
-                />
-              </Grid>
-              <Grid item xs={1} sm={2} md={2} xl={2} />
+          <Grid container style={{ marginTop: '5vh' }}>
+            <Grid item xs={1} sm={2} md={2} xl={2} />
+            <Grid item xs={10} sm={8} md={8} xl={8}>
+              <OtpInput
+                value={otp}
+                onChange={handleChange}
+                numInputs={6}
+                separator={false}
+                inputStyle={classes.otpInput}
+              />
+            </Grid>
+            <Grid item xs={1} sm={2} md={2} xl={2} />
 
-            </Grid>
-            {error.length > 0 && <Typography variant="subtitle1" className={classes.errorText}>{error}</Typography> }
-            <Grid item style={{ display: 'flex', justifyContent: 'space-evenly', marginTop: '4vh', marginBottom: '40px' }}>
-              <Button type="submit" variant="contained" size="small" style={{ width: '155px', height: '40px', fontWeight: '550', color: 'black', boxShadow: 'none', fontSize: '14px' }} type="submit" onClick={() => handleSubmit()} className={classes.sendButton}>
-                { loading && <CircularProgress size={20} style={{ color: 'white' }} />}
-                { !loading && button1 }
-              </Button>
-            </Grid>
-          </form>
+          </Grid>
+          {error.length > 0 && <Typography variant="subtitle1" className={classes.errorText}>{error}</Typography> }
+          <Grid item style={{ display: 'flex', justifyContent: 'space-evenly', marginTop: '4vh', marginBottom: '40px' }}>
+            <Button variant="contained" size="small" style={{ width: '155px', height: '40px', fontWeight: '550', color: 'black', boxShadow: 'none', fontSize: '14px' }} type="submit" onClick={() => handleSubmit()} className={classes.sendButton}>
+              { loading && <CircularProgress size={20} style={{ color: 'white' }} />}
+              { !loading && button1 }
+            </Button>
+          </Grid>
         </DialogContentText>
       </DialogContent>
     </Dialog>

@@ -29,6 +29,13 @@ export const useStyles = makeStyles((theme) => ({
     display: 'flex',
     marginTop: '20%',
   },
+  connectedImg: {
+    marginLeft: '28%',
+    height: '150px',
+    width: '200px',
+    display: 'flex',
+    marginTop: '10%',
+  },
   img2: {
     marginLeft: '43%',
     height: '67px',
@@ -53,7 +60,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   dialogPaper: {
     minHeight: '410px',
-    maxHeight: '410px',
+    maxHeight: '425px',
     maxWidth: '500px',
     minWidth: '500px',
     alignContent: 'center',

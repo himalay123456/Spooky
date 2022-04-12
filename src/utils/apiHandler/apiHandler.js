@@ -1,8 +1,9 @@
 // import { put } from 'redux-saga/effects';
-import axios from '../../http/axios/axios_main';
+import { axios, customAxios } from '../../http';
 // import { logout } from '../../store/actions';
 
 export default function* errorHandler({
+  thirdPartyApi,
   endpoint,
   successHandler,
   failHandler,
@@ -15,7 +16,9 @@ export default function* errorHandler({
   }
   try {
     let response;
-    if (token === '') {
+    if (thirdPartyApi) {
+      response = yield customAxios(endpoint);
+    } else if (token === '') {
       if (apiType === 'get') {
         response = yield axios.get(endpoint);
       } else if (apiType === 'post') {
@@ -32,7 +35,7 @@ export default function* errorHandler({
           Authorization: `Bearer ${token}`,
         },
       };
-      // eslint-disable-next-line no-lonely-if
+        // eslint-disable-next-line no-lonely-if
       if (apiType === 'get') {
         response = yield axios.get(endpoint, config);
       } else if (apiType === 'post') {
@@ -51,6 +54,14 @@ export default function* errorHandler({
       && response.data.result === 1
     ) {
       yield successHandler(response.data);
+    } else if (
+      response
+      && response.status === 200
+      && response.data
+      && response.data.result
+      && thirdPartyApi
+    ) {
+      yield successHandler(response.data);
     } else if (response !== undefined && response.status !== undefined) {
       if (
         response.data.msg !== undefined
@@ -58,6 +69,7 @@ export default function* errorHandler({
         && typeof response.data.msg === 'string'
       ) {
         yield failHandler(response.data.msg);
+        console.log('🚀 ~ file: apiHandler.js ~ line 79 ~ error', response.status);
       } else {
         yield failHandler('Server error! Please try again.');
       }
@@ -72,8 +84,8 @@ export default function* errorHandler({
     ) {
       if (error.response.status === 400) {
         yield failHandler(error.response.data.msg);
-      }
-      if (error.response.status === 401) {
+        console.log('🚀 ~ file: apiHandler.js ~ line 89 ~ error', error.response.data);
+      } else if (error.response.status === 401) {
         // yield put(logout());
       } else if (
         error.response.data.msg !== undefined
@@ -81,6 +93,7 @@ export default function* errorHandler({
         && typeof error.response.data.msg === 'string'
       ) {
         yield failHandler(error.response.data.msg);
+        console.log('🚀 ~ file: apiHandler.js ~ line 97 ~ error', error.response.data);
       } else {
         yield failHandler('Server error! Please try again.');
       }

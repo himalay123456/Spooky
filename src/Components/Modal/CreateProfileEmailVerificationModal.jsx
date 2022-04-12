@@ -79,7 +79,7 @@ const CreateProfileVerificationModal = ({
           <span className={`${classes.onHover} ${classes.closeBtn}`}><CloseIcon /></span>
         </div>
         <DialogContentText id="alert-dialog-description">
-          <form noValidate autoComplete="off" onSubmit={formik.handleSubmit} className="ProfileVerify">
+          <form noValidate autoComplete="off" onSubmit={formik.handleSubmit}>
             <Grid container style={{ marginTop: '5vh' }}>
               <Grid item xs={1} sm={2} md={2} xl={2} />
               <Grid item xs={10} sm={8} md={8} xl={8}>

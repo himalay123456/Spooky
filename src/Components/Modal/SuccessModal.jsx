@@ -7,14 +7,14 @@ import React from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
-import { Grid, Typography } from '@material-ui/core';
+import { Button, Grid, Typography } from '@material-ui/core';
 import { useStyles } from './ModalStyles';
 import SuccessIcon from '../../Assets/Svg/successIcon.svg';
 import SuccessIcon2 from '../../Assets/Svg/successIcon2.svg';
 import { ReactComponent as CloseIcon } from '../../Assets/Svg/close.svg';
 
 const SuccessModal = ({
-  open, handleClose, heading, subtitle, type,
+  open, handleClose, heading, subtitle, type, hasButton, buttonTitle, onButtonClick,
 }) => {
   const classes = useStyles();
 
@@ -44,6 +44,19 @@ const SuccessModal = ({
               {subtitle}
             </Typography>
           </Grid>
+          {hasButton
+            && (
+            <Grid item style={{ textAlign: 'center' }}>
+              <Button
+                variant="contained"
+                color="primary"
+                size="large"
+                onClick={(e) => onButtonClick(e)}
+              >
+                {buttonTitle}
+              </Button>
+            </Grid>
+            )}
         </DialogContentText>
       </DialogContent>
     </Dialog>

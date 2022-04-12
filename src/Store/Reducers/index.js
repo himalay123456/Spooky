@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
-import LandingPage from './Landing';
+import Auth from './Auth';
+import Administrator from './Administrator';
 import NFT from './NFT';
+import Analytics from './Analytics';
 
 export default () => combineReducers({
-  LandingPage,
+  Auth,
+  Administrator,
   NFT,
+  Analytics,
 });
